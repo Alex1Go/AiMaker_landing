@@ -31,12 +31,14 @@ a {
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1340px;
   margin: 0 auto;
-  padding: 0 100px;
+  padding: 0 10px;
 }
 
 .nav {
+  max-width: 1240px;
+  margin: 0 auto;
   padding-top: 22px;
   display: flex;
   justify-content: space-between;
@@ -68,7 +70,6 @@ a {
   border: 1px solid #fff;
   border-radius: 10px;
   padding: 18px 55px;
-  width: 272px;
   height: 56px;
   color: #fff;
   background-color: #121212;
@@ -80,7 +81,12 @@ a {
   padding-bottom: 40px;
 }
 
+.hero {
+  max-width: 1240px;
+  margin: 0 auto;
+}
 .hero__cont {
+  position: relative;
   display: flex;
   gap: 37px;
 }
@@ -164,6 +170,7 @@ a {
   position: relative;
   display: flex;
   gap: 95px;
+  z-index: 100;
 }
 .hero__box-ob {
   width: 417px;
@@ -244,23 +251,81 @@ a {
   font-weight: 700;
 }
 
-/* Formats */
-.formats__grid {
+/* Footer */
+.footer {
+  padding: 44px 0 30px;
+  background: #232326;
+}
+.footer__container {
+  max-width: 1240px;
+}
+.footer__box {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__info {
+  max-width: 206px;
+}
+.footer__info p {
+  font-size: 12px;
+  line-height: 133%;
+  margin: 22px 0 20px;
+}
+.footer__social {
   display: flex;
   gap: 20px;
 }
-
-.format {
-  flex: 1;
-  background: #1c1c1c;
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
+.footer__menu {
+  margin-top: 24px;
 }
-
-.price {
-  font-size: 24px;
-  color: #6c3ef8;
+.footer__menu-title, .footer__contacts-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 133%;
+  margin-bottom: 20px;
+}
+.footer__menu-link {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 215%;
+  color: #fff;
+}
+.footer__contacts {
+  margin-top: 24px;
+  max-width: 280px;
+}
+.footer__contacts-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer__contacts-box p,
+.footer__contacts-box a {
+  font-weight: 400;
+  font-size: 13px;
+  color: #fff;
+}
+.footer__bottom {
+  grid-column: span 3/span 3;
+  display: flex;
+  margin-top: 42px;
+}
+.footer__bottom p {
+  font-size: 12px;
+  margin-top: 30px;
+}
+.footer__bottom ul {
+  display: flex;
+  gap: 27px;
+  margin-left: auto;
+}
+.footer__bottom::before {
+  content: "";
+  width: 1240px;
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 1px;
+  position: absolute;
+  margin-bottom: 30px;
 }
 
 /*# sourceMappingURL=style.css.map */
