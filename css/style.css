@@ -1,30 +1,21 @@
 @font-face {
   font-family: "Gilroy", sans-serif;
-  src: url("/fonts/Gilroy-Black.woff2") format("woff2"), url("/fonts/Gilroy-Black.woff") format("woff");
+  src: url("/fonts/Gilroy-Medium.woff2") format("woff2"), url("/fonts/Gilroy-Medium.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Gilroy", sans-serif;
   font-weight: 400;
   background: #121212;
   color: #fff;
   line-height: 1.5;
-}
-
-h1,
-h2,
-h3,
-h4,
-p {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-ul {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
 }
 
 img {
@@ -40,9 +31,9 @@ a {
 }
 
 .container {
-  width: 1240px;
-  padding: 0 100px;
+  max-width: 1440px;
   margin: 0 auto;
+  padding: 0 100px;
 }
 
 .nav {
@@ -86,11 +77,21 @@ a {
 /* Hero */
 .hero-section {
   padding-top: 36px;
+  padding-bottom: 40px;
 }
 
+.hero__cont {
+  display: flex;
+  gap: 37px;
+}
+.hero__box1 {
+  width: 503px;
+  position: relative;
+}
 .hero__svg-block {
   display: flex;
   gap: 37px;
+  margin-bottom: 53px;
 }
 .hero__svg-list {
   display: flex;
@@ -111,6 +112,43 @@ a {
   border-radius: 100%;
   background-color: #282828;
 }
+.hero__tittle1 {
+  font-weight: 700;
+  font-size: 241px;
+  line-height: 100%;
+  color: #8b57c2;
+}
+.hero__tittle2 {
+  font-weight: 700;
+  font-size: 67px;
+  line-height: 100%;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.hero__text1 {
+  position: absolute;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.7);
+  width: 250px;
+  top: 120px;
+  right: 0;
+}
+.hero__span1 {
+  font-weight: 700;
+}
+.hero__text2 {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 140%;
+  margin-bottom: 84px;
+}
+.hero__span2 {
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 140%;
+}
 .hero__btn {
   font-family: "Gilroy", sans-serif;
   font-weight: 700;
@@ -122,29 +160,88 @@ a {
   height: 56px;
   background: #8b57c2;
 }
+.hero__box2 {
+  position: relative;
+  display: flex;
+  gap: 95px;
+}
+.hero__box-ob {
+  width: 417px;
+  height: 415px;
+  padding: 33px 23px 34px 32px;
+  background-image: url("../img/fon1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.hero__box-ob .hero__ob-img1 {
+  margin-left: auto;
+}
+.hero__box-ob .hero__ob-img2 {
+  margin-top: 50px;
+}
+.hero__box-hand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 38px;
+  width: 244px;
+  height: 244px;
+  border-radius: 100%;
+  background: linear-gradient(149deg, #80ebf1 0%, #51a5cd 32.42%, #50569e 62.5%, #ce69dd 100%);
+}
+.hero__box-hand img {
+  mix-blend-mode: color-dodge;
+}
+.hero__foto-box {
+  border-radius: 29px;
+  width: 188px;
+  height: 433px;
+  padding: 54px 43px;
+  background: #8b57c2;
+}
+.hero__foto-box .hero__foto-text {
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 110%;
+  text-align: center;
+  margin-bottom: 39px;
+}
+.hero__fon2 {
+  position: absolute;
+  top: 246px;
+  left: 243px;
+}
+.hero__bottomText {
+  margin: 50px auto 0;
+  width: 600px;
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 120%;
+  text-align: center;
+}
 
 /* Program */
-.program .module {
-  border: 1px solid #444;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  overflow: hidden;
-  cursor: pointer;
+.program-section {
+  padding: 40px 0;
+  color: black;
+  background-color: #fff;
 }
 
-.module__header {
-  padding: 16px;
-  background: #222;
+.program__tittle {
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 110%;
+  margin-bottom: 30px;
 }
-
-.module__content {
-  display: none;
-  padding: 16px;
-  background: #333;
+.program__text {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 140%;
+  color: rgba(0, 0, 0, 0.8);
 }
-
-.module.open .module__content {
-  display: block;
+.program__text-span {
+  font-weight: 700;
 }
 
 /* Formats */
@@ -164,12 +261,6 @@ a {
 .price {
   font-size: 24px;
   color: #6c3ef8;
-}
-
-/* Installment */
-.installment {
-  text-align: center;
-  padding: 40px 0;
 }
 
 /*# sourceMappingURL=style.css.map */
