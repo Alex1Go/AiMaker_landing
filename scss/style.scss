@@ -61,6 +61,7 @@ img {
     text-align: center;
     color: rgba(255, 255, 255, 0.8);
     opacity: 0.8;
+    transition: all 0.3s ease-in-out;
   }
 
   button {
@@ -69,10 +70,17 @@ img {
     font-size: 16px;
     border: 1px solid #fff;
     border-radius: 10px;
-    padding: 18px 55px;
-    height: 56px;
     color: #fff;
     background-color: #121212;
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+    max-width: 272px;
+    height: 56px;
+  }
+  button:hover {
+    font-size: 18px;
+    color: #7329b0;
+    background-color: white;
   }
 }
 
@@ -98,7 +106,7 @@ img {
   &__svg-block {
     display: flex;
     gap: 37px;
-    margin-bottom: 53px;
+    margin-bottom: 40px;
   }
   &__svg-list {
     display: flex;
@@ -140,7 +148,7 @@ img {
     line-height: 150%;
     color: rgba(255, 255, 255, 0.7);
     width: 250px;
-    top: 120px;
+    top: 100px;
     right: 0;
   }
   &__span1 {
@@ -150,7 +158,7 @@ img {
     font-weight: 500;
     font-size: 26px;
     line-height: 140%;
-    margin-bottom: 84px;
+    margin-bottom: 74px;
   }
   &__span2 {
     font-weight: 800;
@@ -163,13 +171,15 @@ img {
     font-size: 16px;
     color: #fff;
     border-radius: 8px;
-    padding: 18px 55px;
-    width: 272px;
-    height: 56px;
     background: #8b57c2;
+    border: 1px solid #8b57c2;
     transition: all 0.5s ease-in-out;
+    width: 100%;
+    max-width: 272px;
+    height: 56px;
   }
   &__btn:hover {
+    font-size: 18px;
     color: #7329b0;
     background-color: white;
     border: none;
@@ -349,7 +359,6 @@ img {
     position: relative;
     max-width: 1320px;
     margin: 0 auto;
-    cursor: pointer;
     z-index: 100;
 
     &__box {
@@ -361,6 +370,8 @@ img {
       height: 200px;
       transition: 0.3s all ease-in-out;
       overflow: hidden;
+      cursor: pointer;
+      transition: 0.4s all ease-in-out;
     }
     &__box::before {
       content: '';
@@ -401,7 +412,6 @@ img {
         line-height: 100%;
       }
     }
-
     &__btn {
       width: 100%;
       max-width: 314px;
@@ -494,12 +504,10 @@ img {
     &__detail-list {
       display: none;
     }
-
     &__detail-list.active {
       display: block;
       transition: 0.3s all ease-in-out;
     }
-
     &__detail-title {
       font-weight: 700;
       font-size: 22px;
@@ -512,7 +520,6 @@ img {
       line-height: 140%;
       margin-bottom: 40px;
     }
-
     &__detail-title2 {
       font-weight: 700;
       font-size: 16px;
@@ -520,7 +527,6 @@ img {
       color: #8b57c2;
       margin-bottom: 16px;
     }
-
     &__detail-list2 {
       display: flex;
       flex-direction: column;
@@ -547,37 +553,48 @@ img {
       transform: translateY(-50%);
     }
     &__detail-btn {
-      margin-top: 48px;
-      border-radius: 12px;
-      padding: 24px 40px 27px;
-      width: 334px;
-      height: 68px;
-      background: #8b57c2;
-      text-align: center;
-      cursor: pointer;
-
-      a {
-        font-weight: 700;
-        font-size: 18px;
-        line-height: 100%;
-        color: #fff;
-      }
-    }
-  }
-  &__btn {
-    margin: 0 auto;
-    border-radius: 12px;
-    padding: 25px 54px;
-    width: 285px;
-    height: 68px;
-    background: #8b57c2;
-
-    a {
       font-weight: 700;
       font-size: 18px;
       line-height: 100%;
       color: #fff;
+      display: block;
+      margin-top: 48px;
+      border-radius: 12px;
+      width: 334px;
+      height: 68px;
+      background: #8b57c2;
+      text-align: center;
+      transition: all 0.5s ease-in-out;
+      border: 1px solid #8b57c2;
     }
+    &__detail-btn:hover {
+      font-size: 20px;
+      color: #8b57c2;
+      background: #ffffff;
+      border: 2px solid #8b57c2;
+    }
+  }
+  &__btn {
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 285px;
+    height: 68px;
+    background: #8b57c2;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 100%;
+    color: #fff;
+    transition: all 0.5s ease-in-out;
+    text-align: center;
+    border: 1px solid #8b57c2;
+  }
+  &__btn:hover {
+    font-size: 20px;
+    color: #8b57c2;
+    background: #ffffff;
+    border: 2px solid #8b57c2;
   }
 }
 
@@ -594,6 +611,7 @@ img {
     position: absolute;
     bottom: 550px;
     left: -100px;
+    z-index: -5;
   }
 
   &__tittle {
@@ -1058,7 +1076,7 @@ img {
   }
   &__btn {
     border-radius: 8px;
-    padding: 18px 20px;
+    text-align: center;
     width: 186px;
     height: 55px;
     font-weight: 600;
@@ -1066,6 +1084,7 @@ img {
     color: #fff;
     border: none;
     margin-top: 18px;
+    transition: all 0.5s ease-in-out;
   }
   &__text {
     font-weight: 400;
@@ -1080,20 +1099,42 @@ img {
 .orange {
   color: #fea800;
 }
+
 .orangeback {
   background: #fea800;
+  transition: all 0.5s ease-in-out;
+}
+.orangeback:hover {
+  font-size: 18px;
+  background: #ffffff;
+  color: #fea800;
+  border: 3px solid #fea800;
 }
 .violet {
   color: #8b57c2;
 }
 .violetback {
   background: #8b57c2;
+  transition: all 0.5s ease-in-out;
+}
+.violetback:hover {
+  font-size: 18px;
+  background: #ffffff;
+  color: #8b57c2;
+  border: 3px solid #8b57c2;
 }
 .blue {
   color: #3b82f6;
 }
 .blueback {
   background: #3b82f6;
+  transition: all 0.5s ease-in-out;
+}
+.blueback:hover {
+  font-size: 18px;
+  background: #ffffff;
+  color: #3b82f6;
+  border: 3px solid #3b82f6;
 }
 
 /* Dedline */
@@ -1212,6 +1253,7 @@ img {
 }
 
 /* Footer */
+
 .footer {
   padding: 44px 0 30px;
   background: #232326;
@@ -1239,7 +1281,10 @@ img {
     display: flex;
     gap: 20px;
   }
-
+  &__social-link:hover svg {
+    scale: 1.3;
+    transition: all 0.3s ease-in-out;
+  }
   &__menu {
     margin-top: 24px;
   }
@@ -1257,6 +1302,10 @@ img {
     font-size: 13px;
     line-height: 215%;
     color: #fff;
+    transition: all 0.3s ease-in-out;
+  }
+  &__menu-link:hover {
+    color: #8b57c2;
   }
   &__contacts {
     margin-top: 24px;
@@ -1272,6 +1321,10 @@ img {
       font-weight: 400;
       font-size: 13px;
       color: #fff;
+      transition: all 0.3s ease-in-out;
+    }
+    a:hover {
+      color: #8b57c2;
     }
   }
 
@@ -1284,10 +1337,15 @@ img {
       font-size: 12px;
       margin-top: 30px;
     }
-    ul {
-      display: flex;
-      gap: 27px;
-      margin-left: auto;
+  }
+  &__docs {
+    display: flex;
+    gap: 27px;
+    margin-left: auto;
+    li > p:hover {
+      color: #8b57c2;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
     }
   }
 

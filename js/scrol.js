@@ -1,8 +1,8 @@
 export function initSmoothScroll() {
-  const duration = 1200; // время анимации (мс) — можно менять для плавности
+  const duration = 2000;
 
   function smoothScrollTo(target) {
-    const header = document.querySelector('header'); // если шапка фиксированная
+    const header = document.querySelector('header');
     const headerHeight = header ? header.offsetHeight : 0;
 
     const startY = window.scrollY;
@@ -15,7 +15,6 @@ export function initSmoothScroll() {
       const time = timestamp - start;
       const percent = Math.min(time / duration, 1);
 
-      // плавная функция easeInOutCubic
       const easing =
         percent < 0.5 ? 4 * percent * percent * percent : 1 - Math.pow(-2 * percent + 2, 3) / 2;
 
@@ -29,7 +28,6 @@ export function initSmoothScroll() {
     requestAnimationFrame(step);
   }
 
-  // ловим все элементы: ссылки <a> с href и кнопки с data-scroll
   document.querySelectorAll('a[href^="#"], [data-scroll]').forEach(el => {
     el.addEventListener('click', e => {
       e.preventDefault();
