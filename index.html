@@ -25,7 +25,7 @@
                     <li><a class="nav__link" href="#reviews">Відгуки</a></li>
                     <li><a class="nav__link" href="#signup">Записатись</a></li>
                 </ul>
-                <button type="button">Записатися на курс</button>
+                <button data-scroll="#format" type="button">Записатися на курс</button>
             </nav>
         </div>
     </header>
@@ -74,7 +74,7 @@
                                 своїй роботі та почніть заробляти набагато більше за допомогою
                                 штучного інтелекту
                             </p>
-                            <button class="hero__btn" type="button">Записатися на курс</button>
+                            <button data-scroll="#format" class="hero__btn" type="button">Записатися на курс</button>
                         </div>
                         <div class="hero__box2">
                             <div>
@@ -103,7 +103,7 @@
             </div>
         </section>
         <!-- Program -->
-        <section class="program-section">
+        <section id="program" class="program-section">
             <div class="container program">
                 <div class="program__header">
                     <div class="program__box1">
@@ -962,7 +962,7 @@
         <section class="format-section">
             <div class="container">
                 <div class="format">
-                    <div class="format__header">
+                    <div class="format__header" id="format">
                         <div class="timer__box">
                             <p class="timer__box-tittle">
                                 До <span>підвищення</span> цін залишилося:
@@ -1021,7 +1021,7 @@
                                         </svg>
                                         <p class="table__perple-text">Хіт продажів</p>
                                         Pro
-                                        <p class="table__box-text">Бонуси уточнюйте у менеджера</p>
+                                        <p class="table__box-text" style="opacity: 1;">Бонуси уточнюйте у менеджера</p>
                                     </div>
                                 </div>
                                 <div class="table__tittle-box1">
@@ -1031,271 +1031,367 @@
                                 </div>
                             </div>
                         </div>
-                        <ul>
-                            <li>
-                                <p>Доступ до Базового курсу з 13 уроків</p>
-                                <svg></svg>
-                            </li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </div>
-
-                    <!-- <table class="pricing-table">
-                        <thead>
-                            <tr>
-                                <th style="text-align: left; width: 35%;"></th>
-                                <th style="width: 21.67%;">
-                                    <div class="plan-header plan-standard">
-                                        Standart
-                                    </div>
-                                </th>
-                                <th style="width: 21.67%;">
-                                    <div class="plan-header plan-pro">
-                                        Pro
-                                        <div class="plan-label">Популярний</div>
-                                    </div>
-                                </th>
-                                <th style="width: 21.67%;">
-                                    <div class="plan-header plan-premium">
-                                        Premium
-                                    </div>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="feature-text">Доступ до базового курсу з 10 розділів</td>
-                                <td><span class="check-icon check-standard">✓</span></td>
-                                <td><span class="check-icon check-pro">✓</span></td>
-                                <td><span class="check-icon check-premium">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td class="feature-text">
-                                    <div class="feature-with-tooltip">
-                                        Бонуси для учасників:
-                                        <span class="info-icon">i</span>
-                                        <div class="tooltip">Додаткові матеріали та ексклюзивний контент для учасників
-                                            курсу</div>
-                                    </div>
-                                    <div style="font-size: 12px; color: #6b7280; margin-top: 4px;">
-                                        • Навчальна характеристика попереднього кар'єрного шляху<br>
-                                        • Обчислена мотивація автобіографії
-                                    </div>
-                                </td>
-                                <td><span class="dash">—</span></td>
-                                <td><span class="check-icon check-pro">✓</span></td>
-                                <td><span class="check-icon check-premium">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td class="feature-text">
-                                    <div class="feature-with-tooltip">
-                                        Чат в Телеграм з куратором на навчанні
-                                        <span class="info-icon">i</span>
-                                        <div class="tooltip">Особисті консультації з куратором протягом курсу</div>
-                                    </div>
-                                </td>
-                                <td><span class="dash">—</span></td>
-                                <td><span class="check-icon check-pro">✓</span></td>
-                                <td><span class="check-icon check-premium">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td class="feature-text">
-                                    <div class="feature-with-tooltip">
-                                        Біографії кліс-кл СкоЛОВ
-                                        <span class="info-icon">i</span>
-                                        <div class="tooltip">Детальні кейси успішних випускників програми</div>
-                                    </div>
-                                </td>
-                                <td><span class="check-icon check-standard">✓</span></td>
-                                <td><span class="check-icon check-pro">✓</span></td>
-                                <td><span class="check-icon check-premium">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td class="feature-text">
-                                    <div class="feature-with-tooltip">
-                                        Тести запитань на закріплення знань
-                                        <span class="info-icon">i</span>
-                                        <div class="tooltip">Інтерактивні тести для перевірки засвоєння матеріалу</div>
-                                    </div>
-                                </td>
-                                <td>1 місяць</td>
-                                <td>6 місяців</td>
-                                <td>12 місяців</td>
-                            </tr>
-                            <tr>
-                                <td class="feature-text">
-                                    <div class="feature-with-tooltip">
-                                        Q&A сесії
-                                        <span class="info-icon">i</span>
-                                        <div class="tooltip">Інтерактивні сесії запитань та відповідей з експертами
+                        <div style="position: relative;">
+                            <div class="fon-list"></div>
+                            <ul class="table__list">
+                                <li class="table__list-1 table__list-item">
+                                    <div class="table__tittle-box">
+                                        <p class="table__list-text">Доступ до Базового курсу з 13 уроків</p>
+                                        <svg class="table__tittle-svg" width="12" height="12">
+                                            <use href="img/svg/i.svg"></use>
+                                        </svg>
+                                        <div class="table__tooltip">
+                                            <ul class="table__tooltip__list">
+                                                <li class="table__tooltip__item">Навчитесь користуватися популярними
+                                                    нейромережами
+                                                </li>
+                                                <li class="table__tooltip__item">Опануєте основи автоматизації</li>
+                                            </ul>
                                         </div>
                                     </div>
-                                </td>
-                                <td><span class="dash">—</span></td>
-                                <td>2</td>
-                                <td>4</td>
-                            </tr>
-                            <tr>
-                                <td class="feature-text">
-                                    <div class="feature-with-tooltip">
-                                        Воркшоп зі спікером
-                                        <span class="info-icon">i</span>
-                                        <div class="tooltip">Практичні майстер-класи з провідними експертами галузі
+                                    <svg class="table__list-svg" width="28" height="28">
+                                        <use href="img/svg/ok_orange.svg"></use>
+                                    </svg>
+                                    <svg class="table__list-svg" width="40" height="40">
+                                        <use href="img/svg/ok_violet.svg"></use>
+                                    </svg>
+                                    <svg class="table__list-svg" width="28" height="28">
+                                        <use href="img/svg/ok_blue.svg"></use>
+                                    </svg>
+                                </li>
+                                <li class="table__list-item">
+                                    <div class="table__tittle-box">
+                                        <p class="table__list-text">Куратор, для швидкого вирішення всіх питань</p>
+                                        <svg class="table__tittle-svg" width="12" height="12">
+                                            <use href="img/svg/i.svg"></use>
+                                        </svg>
+                                        <div class="table__tooltip">
+                                            <ul class="table__tooltip__list">
+                                                <li class="table__tooltip__item">Навчитесь користуватися популярними
+                                                    нейромережами
+                                                </li>
+                                                <li class="table__tooltip__item">Опануєте основи автоматизації</li>
+                                            </ul>
                                         </div>
                                     </div>
-                                </td>
-                                <td><span class="dash">—</span></td>
-                                <td><span class="check-icon check-pro">✓</span></td>
-                                <td><span class="check-icon check-premium">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td class="feature-text">
-                                    <div class="feature-with-tooltip">
-                                        Портфоліо
-                                        <span class="info-icon">i</span>
-                                        <div class="tooltip">Допомога у створенні професійного портфоліо</div>
-                                    </div>
-                                </td>
-                                <td><span class="dash">—</span></td>
-                                <td><span class="check-icon check-pro">✓</span></td>
-                                <td><span class="check-icon check-premium">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td class="feature-text">
-                                    <div class="feature-with-tooltip">
-                                        Доступ до спеціалізованого блогу
-                                        <span class="info-icon">i</span>
-                                        <div class="tooltip">Ексклюзивний контент від експертів та новини індустрії
+                                    <span class="list-span">—</span>
+                                    <svg class="table__list-svg" width="40" height="40">
+                                        <use href="img/svg/ok_violet.svg"></use>
+                                    </svg>
+                                    <svg class="table__list-svg" width="28" height="28">
+                                        <use href="img/svg/ok_blue.svg"></use>
+                                    </svg>
+                                </li>
+                                <li class="table__list-item">
+                                    <div class="table__tittle-box">
+                                        <p class="table__list-text">Чат в Телеграм з кураторами та ментором</p>
+                                        <svg class="table__tittle-svg" width="12" height="12">
+                                            <use href="img/svg/i.svg"></use>
+                                        </svg>
+                                        <div class="table__tooltip">
+                                            <ul class="table__tooltip__list">
+                                                <li class="table__tooltip__item">Навчитесь користуватися популярними
+                                                    нейромережами
+                                                </li>
+                                                <li class="table__tooltip__item">Опануєте основи автоматизації</li>
+                                            </ul>
                                         </div>
                                     </div>
-                                </td>
-                                <td><span class="dash">—</span></td>
-                                <td>Обмежене 1 спецблог</td>
-                                <td>Доступ до всіх спецблогів</td>
-                            </tr>
-                            <tr>
-                                <td class="feature-text">
-                                    <div class="feature-with-tooltip">
-                                        Сертифікат про проходження курсу
-                                        <span class="info-icon">i</span>
-                                        <div class="tooltip">Офіційний сертифікат про успішне завершення програми</div>
+                                    <span class="list-span">—</span>
+                                    <svg class="table__list-svg" width="40" height="40">
+                                        <use href="img/svg/ok_violet.svg"></use>
+                                    </svg>
+                                    <svg class="table__list-svg" width="28" height="28">
+                                        <use href="img/svg/ok_blue.svg"></use>
+                                    </svg>
+                                </li>
+                                <li class="table__list-item">
+                                    <div class="table__tittle-box">
+                                        <p class="table__list-text">Бонусний курс по ChatGPT</p>
+                                        <svg class="table__tittle-svg" width="12" height="12">
+                                            <use href="img/svg/i.svg"></use>
+                                        </svg>
+                                        <div class="table__tooltip">
+                                            <ul class="table__tooltip__list">
+                                                <li class="table__tooltip__item">Навчитесь користуватися популярними
+                                                    нейромережами
+                                                </li>
+                                                <li class="table__tooltip__item">Опануєте основи автоматизації</li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </td>
-                                <td><span class="dash">—</span></td>
-                                <td><span class="check-icon check-pro">✓</span></td>
-                                <td><span class="check-icon check-premium">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td class="feature-text">
-                                    <div class="feature-with-tooltip">
-                                        Персонал кураторства після закінчення
-                                        <span class="info-icon">i</span>
-                                        <div class="tooltip">Індивідуальні консультації після завершення курсу</div>
+                                    <svg class="table__list-svg" width="28" height="28">
+                                        <use href="img/svg/ok_orange.svg"></use>
+                                    </svg>
+                                    <svg class="table__list-svg" width="40" height="40">
+                                        <use href="img/svg/ok_violet.svg"></use>
+                                    </svg>
+                                    <svg class="table__list-svg" width="28" height="28">
+                                        <use href="img/svg/ok_blue.svg"></use>
+                                    </svg>
+                                </li>
+                                <li class="table__list-item">
+                                    <div class="table__tittle-box">
+                                        <p class="table__list-text">Куратор, для швидкого вирішення всіх питань</p>
+                                        <svg class="table__tittle-svg" width="12" height="12">
+                                            <use href="img/svg/i.svg"></use>
+                                        </svg>
+                                        <div class="table__tooltip">
+                                            <ul class="table__tooltip__list">
+                                                <li class="table__tooltip__item">Навчитесь користуватися популярними
+                                                    нейромережами
+                                                </li>
+                                                <li class="table__tooltip__item">Опануєте основи автоматизації</li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </td>
-                                <td><span class="dash">—</span></td>
-                                <td><span class="dash">—</span></td>
-                                <td>3 місяці</td>
-                            </tr>
-                            <tr>
-                                <td class="feature-text">
-                                    <div class="feature-with-tooltip">
-                                        Доступ до Chaos Talents
-                                        <span class="info-icon">i</span>
-                                        <div class="tooltip">Доступ до платформи пошуку роботи та networking</div>
+                                    <span class="list-span">1 місяць</span>
+                                    <span class="list-span2 ">6 місяців</span>
+                                    <span class="list-span">12 місяців</span>
+                                </li>
+                                <li class="table__list-item">
+                                    <div class="table__tittle-box">
+                                        <p class="table__list-text">Доступ до спеціалізованого блоку</p>
+                                        <svg class="table__tittle-svg" width="12" height="12">
+                                            <use href="img/svg/i.svg"></use>
+                                        </svg>
+                                        <div class="table__tooltip">
+                                            <ul class="table__tooltip__list">
+                                                <li class="table__tooltip__item">Навчитесь користуватися популярними
+                                                    нейромережами
+                                                </li>
+                                                <li class="table__tooltip__item">Опануєте основи автоматизації</li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </td>
-                                <td><span class="dash">—</span></td>
-                                <td><span class="dash">—</span></td>
-                                <td><span class="check-icon check-premium">✓</span></td>
-                            </tr>
-                            <tr>
-                                <td class="feature-text">
-                                    <div class="feature-with-tooltip">
-                                        Доступ до спільноті й спецкористів XIX учасників
-                                        <span class="info-icon">i</span>
-                                        <div class="tooltip">Ексклюзивна спільнота випускників та нетворкінг</div>
+                                    <span class="list-span">—</span>
+                                    <span class="list-span2 ">2</span>
+                                    <span class="list-span">4</span>
+                                </li>
+                                <li class="table__list-item">
+                                    <div class="table__tittle-box">
+                                        <p class="table__list-text">Q&A-сесії</p>
+                                        <svg class="table__tittle-svg" width="12" height="12">
+                                            <use href="img/svg/i.svg"></use>
+                                        </svg>
+                                        <div class="table__tooltip">
+                                            <ul class="table__tooltip__list">
+                                                <li class="table__tooltip__item">Навчитесь користуватися популярними
+                                                    нейромережами
+                                                </li>
+                                                <li class="table__tooltip__item">Опануєте основи автоматизації</li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                </td>
-                                <td><span class="dash">—</span></td>
-                                <td><span class="dash">—</span></td>
-                                <td><span class="check-icon check-premium">✓</span></td>
-                            </tr>
-                        </tbody>
-                    </table> -->
-
-
-                    <!-- <div class="pricing-table">
-                        <div class="pricing-table__header">
-                            <div class="pricing-table__empty"></div>
-
-                            <div class="pricing-table__col">
-                                <span class="pricing-table__bonus pricing-table__bonus--orange">+ BONUS</span>
-                                <h3 class="pricing-table__title">Standart</h3>
-                                <p class="pricing-table__desc">Бонуси уточнюйте у менеджера</p>
-                            </div>
-
-                            <div class="pricing-table__col pricing-table__col--pro">
-                                <span class="pricing-table__label">Хіт продажу</span>
-                                <span class="pricing-table__bonus pricing-table__bonus--violet">+ BONUS</span>
-                                <h3 class="pricing-table__title">Pro</h3>
-                                <p class="pricing-table__desc">Бонуси уточнюйте у менеджера</p>
-                            </div>
-
-                            <div class="pricing-table__col">
-                                <span class="pricing-table__bonus pricing-table__bonus--blue">+ BONUS</span>
-                                <h3 class="pricing-table__title">Premium</h3>
-                                <p class="pricing-table__desc">Бонуси уточнюйте у менеджера</p>
-                            </div>
+                                    <span class="list-span">—</span>
+                                    <span class="list-span2 ">2</span>
+                                    <span class="list-span">8</span>
+                                </li>
+                                <li class=" table__list-item">
+                                    <div class="table__tittle-box">
+                                        <p class="table__list-text">Воркшопи зі спікером</p>
+                                        <svg class="table__tittle-svg" width="12" height="12">
+                                            <use href="img/svg/i.svg"></use>
+                                        </svg>
+                                        <div class="table__tooltip">
+                                            <ul class="table__tooltip__list">
+                                                <li class="table__tooltip__item">Навчитесь користуватися популярними
+                                                    нейромережами
+                                                </li>
+                                                <li class="table__tooltip__item">Опануєте основи автоматизації</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <span class="list-span">—</span>
+                                    <svg class="table__list-svg" width="40" height="40">
+                                        <use href="img/svg/ok_violet.svg"></use>
+                                    </svg>
+                                    <svg class="table__list-svg" width="28" height="28">
+                                        <use href="img/svg/ok_blue.svg"></use>
+                                    </svg>
+                                </li>
+                                <li class=" table__list-item">
+                                    <div class="table__tittle-box">
+                                        <p class="table__list-text">Перевірка ДЗ</p>
+                                        <svg class="table__tittle-svg" width="12" height="12">
+                                            <use href="img/svg/i.svg"></use>
+                                        </svg>
+                                        <div class="table__tooltip">
+                                            <ul class="table__tooltip__list">
+                                                <li class="table__tooltip__item">Навчитесь користуватися популярними
+                                                    нейромережами
+                                                </li>
+                                                <li class="table__tooltip__item">Опануєте основи автоматизації</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <span class="list-span">—</span>
+                                    <svg class="table__list-svg" width="40" height="40">
+                                        <use href="img/svg/ok_violet.svg"></use>
+                                    </svg>
+                                    <svg class="table__list-svg" width="28" height="28">
+                                        <use href="img/svg/ok_blue.svg"></use>
+                                    </svg>
+                                </li>
+                                <li class="table__list-item">
+                                    <div class="table__tittle-box">
+                                        <p class="table__list-text">Доступ до спеціалізованого блоку</p>
+                                        <svg class="table__tittle-svg" width="12" height="12">
+                                            <use href="img/svg/i.svg"></use>
+                                        </svg>
+                                        <div class="table__tooltip">
+                                            <ul class="table__tooltip__list">
+                                                <li class="table__tooltip__item">Навчитесь користуватися популярними
+                                                    нейромережами
+                                                </li>
+                                                <li class="table__tooltip__item">Опануєте основи автоматизації</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <span class="list-span">—</span>
+                                    <span class="list-span2 ">Обираєте 1 спецблок</span>
+                                    <span class="list-span">Доступ до усього навчання</span>
+                                </li>
+                                <li class=" table__list-item">
+                                    <div class="table__tittle-box">
+                                        <p class="table__list-text">Сертифікат про проходження курсу</p>
+                                        <svg class="table__tittle-svg" width="12" height="12">
+                                            <use href="img/svg/i.svg"></use>
+                                        </svg>
+                                        <div class="table__tooltip">
+                                            <ul class="table__tooltip__list">
+                                                <li class="table__tooltip__item">Навчитесь користуватися популярними
+                                                    нейромережами
+                                                </li>
+                                                <li class="table__tooltip__item">Опануєте основи автоматизації</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <span class="list-span">—</span>
+                                    <svg class="table__list-svg" width="40" height="40">
+                                        <use href="img/svg/ok_violet.svg"></use>
+                                    </svg>
+                                    <svg class="table__list-svg" width="28" height="28">
+                                        <use href="img/svg/ok_blue.svg"></use>
+                                    </svg>
+                                </li>
+                                <li class="table__list-item">
+                                    <div class="table__tittle-box">
+                                        <p class="table__list-text">Підтримка кураторами після навчання</p>
+                                        <svg class="table__tittle-svg" width="12" height="12">
+                                            <use href="img/svg/i.svg"></use>
+                                        </svg>
+                                        <div class="table__tooltip">
+                                            <ul class="table__tooltip__list">
+                                                <li class="table__tooltip__item">Навчитесь користуватися популярними
+                                                    нейромережами
+                                                </li>
+                                                <li class="table__tooltip__item">Опануєте основи автоматизації</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <span class="list-span">—</span>
+                                    <span class="list-span">—</span>
+                                    <span class="list-span">3 місяці</span>
+                                </li>
+                                <li class=" table__list-item">
+                                    <div class="table__tittle-box">
+                                        <p class="table__list-text">Доступ до Genius Talents</p>
+                                        <svg class="table__tittle-svg" width="12" height="12">
+                                            <use href="img/svg/i.svg"></use>
+                                        </svg>
+                                        <div class="table__tooltip">
+                                            <ul class="table__tooltip__list">
+                                                <li class="table__tooltip__item">Навчитесь користуватися популярними
+                                                    нейромережами
+                                                </li>
+                                                <li class="table__tooltip__item">Опануєте основи автоматизації</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <span class="list-span">—</span>
+                                    <span class="list-span">—</span>
+                                    <svg class="table__list-svg" width="28" height="28">
+                                        <use href="img/svg/ok_blue.svg"></use>
+                                    </svg>
+                                </li>
+                                <li class=" table__list-item">
+                                    <div class="table__tittle-box">
+                                        <p class="table__list-text">Доступ до спільноти AI спеціалістів (XXX учасників)
+                                        </p>
+                                        <svg class="table__tittle-svg" width="12" height="12">
+                                            <use href="img/svg/i.svg"></use>
+                                        </svg>
+                                        <div class="table__tooltip">
+                                            <ul class="table__tooltip__list">
+                                                <li class="table__tooltip__item">Навчитесь користуватися популярними
+                                                    нейромережами
+                                                </li>
+                                                <li class="table__tooltip__item">Опануєте основи автоматизації</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <span class="list-span">—</span>
+                                    <span class="list-span">—</span>
+                                    <svg class="table__list-svg" width="28" height="28">
+                                        <use href="img/svg/ok_blue.svg"></use>
+                                    </svg>
+                                </li>
+                            </ul>
                         </div>
-
-                        <div class="pricing-table__row">
-                            <div class="pricing-table__feature">
-                                Доступ до Базового курсу з 13 уроків
-                                <div class="tooltip">
-                                    <span class="tooltip__icon">i</span>
-                                    <span class="tooltip__text">
-                                        Навчитесь користуватися популярними нейромережами.<br>
-                                        Опануєте основи автоматизації.
-                                    </span>
+                    </div>
+                    <div class="price">
+                        <div class="timer__box">
+                            <p class="timer__box-tittle timer__box-tittle2">
+                                До <span>підвищення</span> цін залишилося:
+                            </p>
+                            <div class="timer">
+                                <div class="timer__item timer__item2">
+                                    <span id="days-1">0</span>
+                                    <p>Днів</p>
+                                </div>
+                                <svg width="7" height="16">
+                                    <use href="img/svg/timer2.svg"></use>
+                                </svg>
+                                <div class="timer__item timer__item2">
+                                    <span id="hours-1">0</span>
+                                    <p>Години</p>
+                                </div>
+                                <svg width="7" height="16">
+                                    <use href="img/svg/timer2.svg"></use>
+                                </svg>
+                                <div class="timer__item timer__item2">
+                                    <span id="minutes-1">0</span>
+                                    <p>Хвилини</p>
+                                </div>
+                                <svg width="7" height="16">
+                                    <use href="img/svg/timer2.svg"></use>
+                                </svg>
+                                <div class="timer__item timer__item2">
+                                    <span id="seconds-1">0</span>
+                                    <p>Секунд</p>
                                 </div>
                             </div>
-                            <div class="pricing-table__cell"><span class="icon check--orange"></span></div>
-                            <div class="pricing-table__cell"><span class="icon check--violet"></span></div>
-                            <div class="pricing-table__cell"><span class="icon check--blue"></span></div>
                         </div>
-
-                        <div class="pricing-table__row">
-                            <div class="pricing-table__feature">Куратор, для швидкого</div>
-                            <div class="pricing-table__cell">–</div>
-                            <div class="pricing-table__cell"><span class="icon check--violet"></span></div>
-                            <div class="pricing-table__cell"><span class="icon check--blue"></span></div>
+                        <div class="price__box">
+                            <p class="price__first-price">16 000 грн</p>
+                            <h3 class="price__main-price orange">7 560<span> грн</span></h3>
+                            <button class="price__btn orangeback">Залишити заявку</button>
+                            <h4 class="price__text orange">Залишилось місць <span>25</span> з 145</h4>
                         </div>
-
-                        <div class="pricing-table__row">
-                            <div class="pricing-table__feature">Чат в Telegram з кураторами та менторами</div>
-                            <div class="pricing-table__cell">–</div>
-                            <div class="pricing-table__cell"><span class="icon check--violet"></span></div>
-                            <div class="pricing-table__cell"><span class="icon check--blue"></span></div>
+                        <div class="price__box">
+                            <p class="price__first-price">24 000 грн</p>
+                            <h3 class="price__main-price violet">10 080<span>грн</span></h3>
+                            <button class="price__btn violetback">Залишити заявку</button>
+                            <h4 class="price__text ">Залишилось місць <span>25</span> з 145</h4>
                         </div>
-
-                        <div class="pricing-table__row">
-                            <div class="pricing-table__feature">Бонусний курс по ChatGPT</div>
-                            <div class="pricing-table__cell"><span class="icon check--orange"></span></div>
-                            <div class="pricing-table__cell"><span class="icon check--violet"></span></div>
-                            <div class="pricing-table__cell"><span class="icon check--blue"></span></div>
+                        <div class="price__box">
+                            <p class="price__first-price">28 000 грн</p>
+                            <h3 class="price__main-price blue">13 860<span>грн</span></h3>
+                            <button class="price__btn blueback">Залишити заявку</button>
+                            <h4 class="price__text blue">Залишилось місць <span>25</span> з 145</h4>
                         </div>
-                    </div> -->
-
-
+                    </div>
                 </div>
             </div>
         </section>

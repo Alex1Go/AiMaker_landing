@@ -1,8 +1,8 @@
 export function initCountdown() {
-  const daysEl = document.getElementById('days');
-  const hoursEl = document.getElementById('hours');
-  const minutesEl = document.getElementById('minutes');
-  const secondsEl = document.getElementById('seconds');
+  const daysEl = [document.getElementById('days'), document.getElementById('days-1')];
+  const hoursEl = [document.getElementById('hours'), document.getElementById('hours-1')];
+  const minutesEl = [document.getElementById('minutes'), document.getElementById('minutes-1')];
+  const secondsEl = [document.getElementById('seconds'), document.getElementById('seconds-1')];
 
   function getNextFridayDeadline() {
     const now = new Date();
@@ -29,10 +29,10 @@ export function initCountdown() {
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
     const seconds = Math.floor((diff / 1000) % 60);
 
-    daysEl.textContent = days;
-    hoursEl.textContent = hours.toString().padStart(2, '0');
-    minutesEl.textContent = minutes.toString().padStart(2, '0');
-    secondsEl.textContent = seconds.toString().padStart(2, '0');
+    daysEl.forEach(el => (el.textContent = days));
+    hoursEl.forEach(el => (el.textContent = hours.toString().padStart(2, '0')));
+    minutesEl.forEach(el => (el.textContent = minutes.toString().padStart(2, '0')));
+    secondsEl.forEach(el => (el.textContent = seconds.toString().padStart(2, '0')));
   }
 
   updateTimer();
