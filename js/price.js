@@ -5,47 +5,23 @@ export function initPriceCycle() {
     parseInt(el.textContent.replace(/\D/g, ''))
   );
 
-  let raiseCount = 0;
-  let nextRaiseTime = null;
+  function updatePrices() {
+    const now = new Date();
+    let day = now.getDay();
+    let multiplier = 0;
 
-  function raisePrices() {
-    raiseCount++;
+    if (day === 5) multiplier = 1;
+    if (day === 6) multiplier = 2;
+    if (day === 0) multiplier = 3;
+    if (day === 1) multiplier = 4;
+    if (day >= 2 && day <= 4) multiplier = 0;
 
     priceElements.forEach((el, i) => {
-      let newPrice = basePrices[i] + raiseCount * 1000;
+      const newPrice = basePrices[i] + multiplier * 1000;
       el.innerHTML = `${newPrice}<span> грн</span>`;
     });
-
-    if (raiseCount < 4) {
-      nextRaiseTime = Date.now() + 2 * 24 * 60 * 60 * 1000;
-    } else {
-      setTimeout(() => {
-        priceElements.forEach((el, i) => {
-          el.innerHTML = `${basePrices[i]}<span> грн</span>`;
-        });
-        raiseCount = 0;
-        nextRaiseTime = getNextFridayDeadline().getTime();
-      }, 2 * 24 * 60 * 60 * 1000);
-    }
   }
 
-  function getNextFridayDeadline() {
-    const now = new Date();
-    const deadline = new Date(now);
-    deadline.setDate(now.getDate() + ((5 - now.getDay() + 7) % 7 || 7));
-    deadline.setHours(23, 59, 59, 999);
-    return deadline;
-  }
-
-  setInterval(() => {
-    const now = Date.now();
-
-    if (!nextRaiseTime) {
-      nextRaiseTime = getNextFridayDeadline().getTime();
-    }
-
-    if (now >= nextRaiseTime) {
-      raisePrices();
-    }
-  }, 60 * 1000);
+  updatePrices();
+  setInterval(updatePrices, 60 * 1000);
 }

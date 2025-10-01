@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Gilroy', sans-serif;
-  src: url('/fonts/Gilroy-Medium.woff2') format('woff2'),
-    url('/fonts/Gilroy-Medium.woff') format('woff');
+  src: url('../fonts/Gilroy-Regular.woff2') format('woff2'),
+    url('../fonts/Gilroy-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -12,7 +12,6 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
-  // outline: 1px solid rgba(0, 255, 0, 0.2);
 }
 
 body {
@@ -31,9 +30,9 @@ img {
 
 .container {
   max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 37.5px;
-  outline: 2px dashed red;
 }
 
 .nav {
@@ -64,7 +63,7 @@ img {
     transition: all 0.3s ease-in-out;
   }
 
-  button {
+  &__btn {
     font-family: 'Gilroy', sans-serif;
     font-weight: 700;
     font-size: 16px;
@@ -77,10 +76,197 @@ img {
     max-width: 272px;
     height: 56px;
   }
-  button:hover {
+  &__btn:hover {
     font-size: 18px;
     color: #7329b0;
     background-color: white;
+  }
+  &__burger {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 375px;
+    padding: 0 16px;
+  }
+
+  .nav {
+    padding-top: 16px;
+    position: relative;
+
+    .nav__logo {
+      svg {
+        width: 80px;
+        height: 33px;
+      }
+    }
+
+    .nav__list,
+    .nav__btn {
+      display: none;
+    }
+
+    .nav__burger {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+      z-index: 1001;
+      transition: all 0.3s ease;
+
+      span {
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+      }
+
+      &.active {
+        span:nth-child(1) {
+          transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        span:nth-child(2) {
+          opacity: 0;
+        }
+
+        span:nth-child(3) {
+          transform: rotate(-45deg) translate(8px, -8px);
+        }
+      }
+    }
+  }
+
+  .mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, #1a1a1a 0%, #121212 100%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 20px 40px;
+    transition: right 0.4s ease-in-out;
+    overflow-y: auto;
+
+    &.active {
+      right: 0;
+    }
+
+    .mobile-nav__close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        border-radius: 2px;
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+
+    .mobile-nav__list {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      margin-bottom: 60px;
+
+      li {
+        text-align: center;
+        opacity: 0;
+        transform: translateY(-20px);
+        animation: slideDown 0.4s ease forwards;
+
+        @for $i from 1 through 4 {
+          &:nth-child(#{$i}) {
+            animation-delay: #{$i * 0.1}s;
+          }
+        }
+
+        a {
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 160%;
+          color: rgba(255, 255, 255, 0.9);
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #8b57c2;
+          }
+        }
+      }
+    }
+
+    .mobile-nav__btn {
+      font-family: 'Gilroy', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      border: 1px solid #fff;
+      border-radius: 10px;
+      color: #fff;
+      background-color: transparent;
+      width: 100%;
+      height: 56px;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideUp 0.4s ease forwards 0.5s;
+
+      &:hover,
+      &:active {
+        color: #7329b0;
+        background-color: white;
+      }
+    }
+  }
+}
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Скрываем бургер на десктопе
+@media (min-width: 769px) {
+  .nav__burger {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: none;
   }
 }
 

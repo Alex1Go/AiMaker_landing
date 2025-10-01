@@ -1,3 +1,4 @@
+// countdown.js
 export function initCountdown() {
   const daysEl = [document.getElementById('days'), document.getElementById('days-1')];
   const hoursEl = [document.getElementById('hours'), document.getElementById('hours-1')];
