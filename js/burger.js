@@ -1,135 +1,93 @@
-// mobileNav.js
 export function initMobileNav() {
-  console.log('initMobileNav called'); // Отладка
-
   const burger = document.getElementById('burger');
   const mobileNav = document.getElementById('mobileNav');
-  const body = document.body;
 
-  console.log('burger:', burger); // Отладка
-  console.log('mobileNav:', mobileNav); // Отладка
-
-  // Проверяем наличие элементов
   if (!burger || !mobileNav) {
-    console.error('Burger or mobileNav element not found');
-    console.error('burger exists:', !!burger);
-    console.error('mobileNav exists:', !!mobileNav);
     return;
   }
+  if (burger.dataset.mobileNavInited === '1') return;
+  burger.dataset.mobileNavInited = '1';
 
-  console.log('Elements found, initializing menu'); // Отладка
+  const desktopList = document.querySelector('.nav__list');
+  const desktopBtn = document.querySelector('.nav__btn');
 
-  // Создаем содержимое мобильного меню
-  const navContent = `
-    <button class="mobile-nav__close" aria-label="Закрыть меню"></button>
-    <ul class="mobile-nav__list">
-      <li><a href="#speakers" class="mobile-nav__link">Спікери</a></li>
-      <li><a href="#program" class="mobile-nav__link">Програма</a></li>
-      <li><a href="#reviews" class="mobile-nav__link">Відгуки</a></li>
-      <li><a href="#signup" class="mobile-nav__link">Записатись</a></li>
-    </ul>
-    <button data-scroll="#format" class="mobile-nav__btn">Записатися на курс</button>
-  `;
+  function buildMobileMenu() {
+    if (mobileNav.querySelector('.mobile-nav__list')) return;
 
-  mobileNav.innerHTML = navContent;
-
-  const closeBtn = mobileNav.querySelector('.mobile-nav__close');
-  const navLinks = mobileNav.querySelectorAll('.mobile-nav__link');
-  const navBtn = mobileNav.querySelector('.mobile-nav__btn');
-
-  // Функция открытия меню
-  function openMenu() {
-    mobileNav.classList.add('active');
-    burger.classList.add('active');
-    body.style.overflow = 'hidden';
-  }
-
-  // Функция закрытия меню
-  function closeMenu() {
-    mobileNav.classList.remove('active');
-    burger.classList.remove('active');
-    body.style.overflow = '';
-  }
-
-  // Обработчик клика на бургер
-  burger.addEventListener('click', e => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    if (mobileNav.classList.contains('active')) {
-      closeMenu();
+    if (desktopList) {
+      const listClone = desktopList.cloneNode(true);
+      listClone.className = 'mobile-nav__list';
+      listClone.querySelectorAll('a').forEach(a => {
+        a.classList.remove('nav__link');
+        a.classList.add('mobile-nav__link');
+      });
+      mobileNav.appendChild(listClone);
     } else {
-      openMenu();
+      const ul = document.createElement('ul');
+      ul.className = 'mobile-nav__list';
+      [
+        { href: '#speakers', text: 'Спікери' },
+        { href: '#program', text: 'Програма' },
+        { href: '#reviews', text: 'Відгуки' },
+        { href: '#signup', text: 'Записатись' },
+      ].forEach(item => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = item.href;
+        a.textContent = item.text;
+        a.className = 'mobile-nav__link';
+        li.appendChild(a);
+        ul.appendChild(li);
+      });
+      mobileNav.appendChild(ul);
     }
+
+    if (desktopBtn) {
+      const btnClone = desktopBtn.cloneNode(true);
+      btnClone.classList.remove('nav__btn');
+      btnClone.classList.add('mobile-nav__btn');
+      mobileNav.appendChild(btnClone);
+    }
+  }
+
+  buildMobileMenu();
+
+  const mobileLinks = mobileNav.querySelectorAll('.mobile-nav__link');
+  const mobileBtn = mobileNav.querySelector('.mobile-nav__btn');
+
+  function openMenu() {
+    burger.classList.add('active');
+    mobileNav.classList.add('active');
+    document.body.classList.add('lock');
+    burger.setAttribute('aria-expanded', 'true');
+  }
+  function closeMenu() {
+    burger.classList.remove('active');
+    mobileNav.classList.remove('active');
+    document.body.classList.remove('lock');
+    burger.setAttribute('aria-expanded', 'false');
+  }
+  burger.addEventListener('click', () => {
+    if (mobileNav.classList.contains('active')) closeMenu();
+    else openMenu();
   });
 
-  // Обработчик клика на кнопку закрытия
-  if (closeBtn) {
-    closeBtn.addEventListener('click', e => {
-      e.preventDefault();
+  mobileLinks.forEach(link =>
+    link.addEventListener('click', () => {
+      closeMenu();
+    })
+  );
+  if (mobileBtn) {
+    mobileBtn.addEventListener('click', () => {
       closeMenu();
     });
   }
-
-  // Закрытие меню при клике на ссылку
-  navLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      const targetId = link.getAttribute('href');
-
-      if (targetId && targetId.startsWith('#')) {
-        e.preventDefault();
-        closeMenu();
-
-        const targetSection = document.querySelector(targetId);
-        if (targetSection) {
-          setTimeout(() => {
-            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }, 400);
-        }
-      }
-    });
-  });
-
-  // Закрытие меню при клике на кнопку
-  if (navBtn) {
-    navBtn.addEventListener('click', e => {
-      e.preventDefault();
-      closeMenu();
-
-      const targetId = navBtn.getAttribute('data-scroll');
-      if (targetId) {
-        const targetSection = document.querySelector(targetId);
-        if (targetSection) {
-          setTimeout(() => {
-            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }, 400);
-        }
-      }
-    });
-  }
-
-  // Закрытие меню при клике на оверлей (фон меню)
-  mobileNav.addEventListener('click', e => {
-    if (e.target === mobileNav) {
-      closeMenu();
-    }
-  });
-
-  // Закрытие меню при изменении размера окна
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      if (window.innerWidth > 768 && mobileNav.classList.contains('active')) {
-        closeMenu();
-      }
-    }, 250);
-  });
-
-  // Закрытие меню при нажатии ESC
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
-      closeMenu();
-    }
+    if (e.key === 'Escape') closeMenu();
   });
+  mobileNav.addEventListener('click', e => {
+    if (e.target === mobileNav) closeMenu();
+  });
+  burger.setAttribute('aria-controls', 'mobileNav');
+  burger.setAttribute('aria-expanded', mobileNav.classList.contains('active') ? 'true' : 'false');
 }
