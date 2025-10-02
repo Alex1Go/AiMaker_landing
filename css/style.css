@@ -29,7 +29,8 @@ img {
   display: block;
 }
 
-.container {
+.container,
+.wrapper {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
@@ -1376,7 +1377,9 @@ img {
     margin: 0 auto;
   }
   .wrapper {
-    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+    padding: 0;
   }
   .nav__btn {
     display: none;
@@ -1465,7 +1468,7 @@ img {
     background: #fff;
   }
   .hero-section {
-    padding: 24px 0 32px;
+    padding: 32px 0 32px;
   }
   .hero__cont {
     flex-direction: column;
@@ -1474,26 +1477,28 @@ img {
   }
   .hero__box1 {
     width: 100%;
-    text-align: center;
+    text-align: start;
     position: static;
   }
   .hero__svg-block {
     justify-content: center;
     gap: 20px;
     margin-bottom: 24px;
+    text-align: center;
   }
   .hero__svg-list p {
     font-size: 14px;
   }
   .hero__text1 {
-    position: static;
-    margin: 0 auto 16px;
+    position: absolute;
+    top: 80px;
+    text-align: end;
     font-size: 14px;
     width: 100%;
-    max-width: 280px;
+    max-width: 160px;
   }
   .hero__tittle1 {
-    font-size: 96px;
+    font-size: 160px;
     line-height: 1;
   }
   .hero__tittle2 {
@@ -1588,21 +1593,20 @@ img {
     font-size: 16px;
   }
   .program .info.open .container {
-    padding: 0;
+    padding: 0 16px;
   }
   .program .info.open .info__box {
     border-radius: 0;
   }
   .program .info.open .info__content {
-    padding: 16px 0 40px;
+    padding: 16px 16px 40px;
   }
   .program .info__box {
     position: relative;
     flex-direction: column;
     align-items: flex-start;
     height: auto;
-    padding: 20px 0;
-    gap: 16px;
+    padding: 20px 16px;
   }
   .program .info__text h2 {
     font-size: 22px;
@@ -1625,7 +1629,7 @@ img {
   }
   .program .info__btn {
     bottom: 26px;
-    right: 0;
+    right: 16px;
     width: 125px;
     position: absolute;
     max-width: 100%;
@@ -1639,7 +1643,7 @@ img {
   }
   .program .info__content {
     flex-direction: column;
-    padding: 0px;
+    padding: 0px 16px;
     gap: 24px;
   }
   .program .info__content-title {
@@ -1684,7 +1688,7 @@ img {
     margin-top: 40px;
   }
   .program__btn {
-    max-width: 100%;
+    max-width: 80%;
     height: 56px;
     font-size: 16px;
     margin-top: 24px;
