@@ -1414,7 +1414,7 @@ img {
 // --------------------------------------------------------------
 @media (max-width: 768px) {
   .container {
-    width: calc(100% - 32px);
+    width: 100%;
     min-width: 360px;
     max-width: 480px;
     padding: 0 16px;
@@ -2039,7 +2039,7 @@ img {
     &__fon {
       position: absolute;
       top: 30%;
-      width: 350px !important;
+      width: 320px !important;
       z-index: -5;
     }
 
@@ -2210,7 +2210,7 @@ img {
       left: 16px;
       right: 16px;
       top: 0;
-      width: calc(100% - 16px);
+      width: calc(100% - 32px);
       height: 1px;
       background-color: rgba(255, 255, 255, 0.08);
     }
