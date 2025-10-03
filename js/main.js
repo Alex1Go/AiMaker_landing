@@ -7,9 +7,12 @@ import { initMobileNav } from './burger.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initModule();
-  initCountdown();
+  const priceModule = initPriceCycle();
+
+  initCountdown(() => {
+    priceModule.startCycle();
+  });
   initDeadline();
   initSmoothScroll();
-  initPriceCycle();
   initMobileNav();
 });

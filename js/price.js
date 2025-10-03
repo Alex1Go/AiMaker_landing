@@ -1,27 +1,50 @@
-export function initPriceCycle() {
-  const priceElements = document.querySelectorAll('.price__main-price');
+const STORAGE_KEY = 'lastDeadlineTs_v1';
 
-  const basePrices = Array.from(priceElements).map(el =>
-    parseInt(el.textContent.replace(/\D/g, ''))
-  );
+export function initPriceCycle({ priceSelector = '.price__main-price', step = 1000 } = {}) {
+  const priceElements = Array.from(document.querySelectorAll(priceSelector));
+  const basePrices = priceElements.map(el => {
+    const n = parseInt(String(el.textContent).replace(/\D/g, ''), 10);
+    return Number.isFinite(n) ? n : 0;
+  });
+
+  function getMultiplier() {
+    const last = localStorage.getItem(STORAGE_KEY);
+    if (!last) return 0;
+    const lastTs = Number(last);
+    const now = Date.now();
+    const daysElapsed = Math.floor((now - lastTs) / (24 * 60 * 60 * 1000));
+
+    if (daysElapsed <= 3) return daysElapsed + 1;
+    localStorage.removeItem(STORAGE_KEY);
+    return 0;
+  }
 
   function updatePrices() {
-    const now = new Date();
-    let day = now.getDay();
-    let multiplier = 0;
-
-    if (day === 5) multiplier = 1;
-    if (day === 6) multiplier = 2;
-    if (day === 0) multiplier = 3;
-    if (day === 1) multiplier = 4;
-    if (day >= 2 && day <= 4) multiplier = 0;
-
+    const mult = getMultiplier();
     priceElements.forEach((el, i) => {
-      const newPrice = basePrices[i] + multiplier * 1000;
+      const newPrice = basePrices[i] + mult * step;
       el.innerHTML = `${newPrice}<span> грн</span>`;
     });
   }
 
+  function startCycle() {
+    localStorage.setItem(STORAGE_KEY, Date.now().toString());
+    updatePrices();
+  }
+
+  function dailyCheck() {
+    const now = new Date();
+    const mult = getMultiplier();
+    updatePrices();
+
+    const last = localStorage.getItem(STORAGE_KEY);
+    if (!last && now.getDay() === 5) {
+      startCycle();
+    }
+  }
+
   updatePrices();
-  setInterval(updatePrices, 60 * 1000);
+  setInterval(dailyCheck, 60 * 1000);
+
+  return { updatePrices, startCycle };
 }
