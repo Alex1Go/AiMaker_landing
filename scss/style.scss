@@ -1816,6 +1816,8 @@ img {
 
     &__box-tittle {
       height: 50px;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
 
       h3 {
         font-size: 22px;

@@ -1720,6 +1720,8 @@ img {
   }
   .packages__box-tittle {
     height: 50px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
   }
   .packages__box-tittle h3 {
     font-size: 22px;
