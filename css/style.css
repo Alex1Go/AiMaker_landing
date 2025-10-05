@@ -460,6 +460,12 @@ img {
   font-size: 16px;
   line-height: 100%;
   transition: 0.3s all ease-in-out;
+  padding-left: 0;
+}
+.program .info__content-list li:hover {
+  font-weight: 700;
+  color: #8b57c2;
+  cursor: pointer;
 }
 .program .info__content-list li.active {
   font-weight: 700;
@@ -1539,6 +1545,10 @@ img {
     width: 180px;
     height: 180px;
     margin-top: 16px;
+  }
+  .hero__box-hand img {
+    width: 140px;
+    height: 130px;
   }
   .hero__foto-box {
     width: 100%;
