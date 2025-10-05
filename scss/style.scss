@@ -483,9 +483,10 @@ img {
         transition: 0.3s all ease-in-out;
         padding-left: 0;
         &:hover {
-          font-weight: 700;
+          font-weight: 500;
           color: #8b57c2;
           cursor: pointer;
+          transition: 0.3s all ease-in-out;
         }
         &.active {
           font-weight: 700;
