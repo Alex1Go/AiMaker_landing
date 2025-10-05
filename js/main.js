@@ -4,6 +4,7 @@ import { initDeadline } from './deadline.js';
 import { initSmoothScroll } from './scrol.js';
 import { initPriceCycle } from './price.js';
 import { initMobileNav } from './burger.js';
+import { initMobileTooltip } from './tooltipMobile.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initModule();
@@ -15,4 +16,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initDeadline();
   initSmoothScroll();
   initMobileNav();
+  initMobileTooltip();
 });
